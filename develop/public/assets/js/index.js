@@ -1,12 +1,5 @@
-// const express = require('express');
+const { notes } = require('')
 
-// const app = express();
-
-// // parse incoming string on array data
-// app.use(express.urlencoded({ extended: true }));
-// // parse incoming JSON data
-// app.use(express.json());
-   
 let noteTitle;
 let noteText;
 let saveNoteBtn;
