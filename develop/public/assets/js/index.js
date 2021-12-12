@@ -1,5 +1,3 @@
-const { notes } = require('')
-
 let noteTitle;
 let noteText;
 let saveNoteBtn;
