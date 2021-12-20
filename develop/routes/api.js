@@ -62,35 +62,34 @@ router.get('/notes/:id', (req, res) => {
 // ==================================
 router.post('/notes', (req, res) => {
       // Send a message to the client
-  res.json(`${req.method} request received to post new notes`);
-  // Log our request to the terminal
-  console.info(`${req.method} request received to post new notes`);
-    body.push(newkieNote);
-    let data = JSON.parse(fs.readFileSync('./data/notes.json'));
-    const newNote = body;
-    data.push(newNote);
+    res.json(`${req.method} request received to post new notes`);
+    req.body.id = notes.length.toString();
+    const newNote = req.body;
+    let data = JSON.parse(fs.readFileSync("./data/notes.json", "utf-8"))
+    data.push(newNote)
+    fs.writeFileSync("./data/notes.json", JSON.stringify(data));
     res.json(data);
 });
 
-// // DELETE notes
-// // ==================================
-// router.delete('/notes/:id', (req, res) => {
-//       // Send a message to the client
-//   res.json(`${req.method} request received to delete note`);
-//   // Log our request to the terminal
-//   console.info(`${req.method} request received to delete note`);
-//     console.log(req.params.id);
-//     let data = JSON.parse(fs.readFileSync('./data/notes.json', "utf-8", (err) => {
-//         console.log('this is sams idea.' + data);
-//         if (err) throw err
-//     }))
-// let newData = data.filter(note => note.id !== req.params.id)
+// DELETE notes
+// ==================================
+router.delete('/notes/:id', (req, res) => {
+      // Send a message to the client
+  res.json(`${req.method} request received to delete note`);
+  // Log our request to the terminal
+  console.info(`${req.method} request received to delete note`);
+    console.log(req.params.id);
+    let data = JSON.parse(fs.readFileSync('./data/notes.json', "utf-8", (err) => {
+        console.log('this is sams idea.' + data);
+        if (err) throw err
+    }))
+let newData = data.filter(note => note.id !== req.params.id)
 
-//    fs.writeFile("./data/notes.json",  JSON.stringify(newData, null, 2), (err) => {
-//     if (err) throw err
-// });
-//     console.log(data.filter(note => note.id != req.params.id))
-// });
+   fs.writeFile("./data/notes.json",  JSON.stringify(newData, null, 2), (err) => {
+    if (err) throw err
+});
+    console.log(data.filter(note => note.id != req.params.id))
+});
 
 
 module.exports = router;
