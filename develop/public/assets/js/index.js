@@ -26,13 +26,14 @@ const hide = (elem) => {
 let activeNote = {};
 
 const getNotes = () =>
-  fetch('/api/public/notes', {
+  fetch('/api/notes', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
   });
-
+  
+// add the id number when it saves
 const saveNote = (note) =>
   fetch('/api/notes', {
     method: 'POST',
@@ -74,6 +75,7 @@ const handleNoteSave = () => {
   saveNote(newNote).then(() => {
     getAndRenderNotes();
     renderActiveNote();
+    location.reload();
   });
 };
 
@@ -92,6 +94,7 @@ const handleNoteDelete = (e) => {
   deleteNote(noteId).then(() => {
     getAndRenderNotes();
     renderActiveNote();
+    location.reload();
   });
 };
 
