@@ -10,7 +10,7 @@ router.get('/notes', (req, res) => {
     // Log our request to the terminal
     console.info(`${req.method} request received to get a note`);
 
-    var data = JSON.parse(fs.readFileSync('./data/notes.json', 'utf8'));
+    var data = JSON.parse(fs.readFileSync('../data/notes.json', 'utf8'));
     res.json(data);
 });
 
@@ -35,29 +35,6 @@ router.get('/notes/:id', (req, res) => {
     } else res.json('Note ID not found');
 });
 
-// // CREATE a new note
-// // ==================================
-// function newNote(body, notesArray) {
-//     const note = body
-//     notesArray.push(note)
-//     fs.writeFileSync(path.join(__dirname, '../data/notes.json')
-//     )
-//     return note;
-// }
-
-// //POST new notes
-// // ==================================
-// router.post('/notes', (req, res) => {
-//       // Send a message to the client
-//   res.json(`${req.method} request received to post new notes`);
-//   // Log our request to the terminal
-//   console.info(`${req.method} request received to post new notes`);
-//     // req.body.id = notes.length.toString();
-//     const note = newNote(req.body, notes);
-//     res.json(note);
-// });
-
-
 // POST new notes
 // ==================================
 router.post('/notes', (req, res) => {
@@ -65,9 +42,9 @@ router.post('/notes', (req, res) => {
     res.json(`${req.method} request received to post new notes`);
     req.body.id = notes.length.toString();
     const newNote = req.body;
-    let data = JSON.parse(fs.readFileSync("./data/notes.json", "utf-8"))
+    let data = JSON.parse(fs.readFileSync("../data/notes.json", "utf-8"))
     data.push(newNote)
-    fs.writeFileSync("./data/notes.json", JSON.stringify(data));
+    fs.writeFileSync("../data/notes.json", JSON.stringify(data));
     res.json(data);
 });
 
@@ -79,13 +56,13 @@ router.delete('/notes/:id', (req, res) => {
   // Log our request to the terminal
   console.info(`${req.method} request received to delete note`);
     console.log(req.params.id);
-    let data = JSON.parse(fs.readFileSync('./data/notes.json', "utf-8", (err) => {
+    let data = JSON.parse(fs.readFileSync('../data/notes.json', "utf-8", (err) => {
         console.log('this is sams idea.' + data);
         if (err) throw err
     }))
 let newData = data.filter(note => note.id !== req.params.id)
 
-   fs.writeFile("./data/notes.json",  JSON.stringify(newData, null, 2), (err) => {
+   fs.writeFile("../data/notes.json",  JSON.stringify(newData, null, 2), (err) => {
     if (err) throw err
 });
     console.log(data.filter(note => note.id != req.params.id))
