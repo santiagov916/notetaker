@@ -1,16 +1,17 @@
 const express = require('express');
 const fs = require('fs');
 const router = express.Router();
+const notes = require('../data/notes.json');
+const path = require('path');
 
 // GET all notes
 // ==================================
 router.get('/notes', (req, res) => {
-    res.json(`${req.method} request received to get a note`);
     // Log our request to the terminal
     console.info(`${req.method} request received to get a note`);
 
-   var data = JSON.parse(fs.readFileSync('./data/notes.json', 'utf8'));
-   res.json(data);
+    var data = JSON.parse(fs.readFileSync('./data/notes.json', 'utf8'));
+    res.json(data);
 });
 
 // GET a single note 
@@ -39,8 +40,7 @@ router.get('/notes/:id', (req, res) => {
 // function newNote(body, notesArray) {
 //     const note = body
 //     notesArray.push(note)
-//     fs.writeFileSync(path.join(__dirname, '../data/notes.json'),
-//     JSON.stringify({ notes: notesArray }, null, 2)
+//     fs.writeFileSync(path.join(__dirname, '../data/notes.json')
 //     )
 //     return note;
 // }
@@ -58,19 +58,19 @@ router.get('/notes/:id', (req, res) => {
 // });
 
 
-
-// // POST new notes
-// // ==================================
-// router.post('/notes', (req, res) => {
-//       // Send a message to the client
-//   res.json(`${req.method} request received to post new notes`);
-//   // Log our request to the terminal
-//   console.info(`${req.method} request received to post new notes`);
-//     const newkieNote = req.body;
-//     res.push(newkieNote);
-//     let data = JSON.parse(fs.readFileSync('./data/notes.json'));
-//     res.json(data);
-// });
+// POST new notes
+// ==================================
+router.post('/notes', (req, res) => {
+      // Send a message to the client
+  res.json(`${req.method} request received to post new notes`);
+  // Log our request to the terminal
+  console.info(`${req.method} request received to post new notes`);
+    body.push(newkieNote);
+    let data = JSON.parse(fs.readFileSync('./data/notes.json'));
+    const newNote = body;
+    data.push(newNote);
+    res.json(data);
+});
 
 // // DELETE notes
 // // ==================================
