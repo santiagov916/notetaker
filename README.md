@@ -3,6 +3,8 @@
   
   
   ## Table of Content
+
+  * [Final Output](https://whispering-lowlands-02986.herokuapp.com/)
   
   * [Description](#description)
   
@@ -13,6 +15,8 @@
   * [Installation](#Installation)
   
   * [Contributors and more](#contributors)
+
+  * [Screenshots](#screenshots)
   
   * [Questions](#questions)
 
@@ -40,7 +44,8 @@
   ### GitHub Username: santiagov916
   ### GitHub Link to project: https://github.com/santiagov916/notetaker
 
+  ### screenshots
+
   ## Questions?
 
   ### Email the programmer: gme.santi24@yahoo.com
-   ### Video of the program in action:
