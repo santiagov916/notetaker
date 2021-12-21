@@ -4,7 +4,7 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const notes = require('./data/notes.json');
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5502;
 const app = express();
 const apiRequest = require('./routes/api');
 const urlRequest = require('./routes/url');
@@ -25,5 +25,5 @@ app.use('/', urlRequest);
 // Listening
 // ================================================
 app.listen(PORT, () => {
-    console.log(`API now running on port ${PORT}`);
+    console.log(`API now running on port http://localhost:${PORT}`);
 });
