@@ -44,7 +44,11 @@
   ### GitHub Username: santiagov916
   ### GitHub Link to project: https://github.com/santiagov916/notetaker
 
-  ### screenshots
+  ### Screenshots
+  <img width="1656" alt="index" src="https://user-images.githubusercontent.com/72000936/146990953-47675b97-10a8-4568-a87d-c95ddc7979c3.png">
+
+  <img width="1018" alt="notes" src="https://user-images.githubusercontent.com/72000936/146990966-ba756609-88a0-4e56-bc7b-37c35b60e06e.png">
+
 
   ## Questions?
 
