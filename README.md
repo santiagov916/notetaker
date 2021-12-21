@@ -4,7 +4,7 @@
   
   ## Table of Content
 
-  * [Final Output](https://whispering-lowlands-02986.herokuapp.com/)
+  * [Link for Heroku Deployment](https://whispering-lowlands-02986.herokuapp.com/)
   
   * [Description](#description)
   
