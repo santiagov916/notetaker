@@ -30,7 +30,7 @@
 
   ## Usage
 
-  just open it on your browser and get busy
+  https://whispering-lowlands-02986.herokuapp.com/
 
   ## Installation 
 
